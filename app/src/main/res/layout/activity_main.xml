@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="?android:listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="无人机绑定" />
+        <TextView
+            android:id="@+id/tv_status_activation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前应用程序激活状态：未知"
+            android:padding="8dp"
+            android:gravity="center"/>
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_status_binding"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="8dp"-->
+<!--            android:text="当前无人机绑定状态：未知" />-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_btn"
+                android:text="登录DJI账号"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_btn"
+                android:text="退出DJI账号"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"/>
+            <Button
+                android:id="@+id/btn_appActivation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取应用激活状态"
+                android:textColor="@color/white"
+                android:background="@drawable/round_btn"
+                android:layout_marginTop="10dp"/>
+
+<!--            <Button-->
+<!--                android:id="@+id/btn_bindAircraft"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/round_btn"-->
+<!--                android:text="绑定"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:layout_marginTop="10dp"/>-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                style="?android:listSeparatorTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="无人机测试"
+                />
+            <Button
+                android:id="@+id/btn_flyTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="飞行测试"
+                android:background="@drawable/round_btn"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/btn_waypointTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="航点测试"
+                android:background="@drawable/round_btn"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btn_buildMission"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="新增航点任务"
+                android:background="@drawable/round_btn"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

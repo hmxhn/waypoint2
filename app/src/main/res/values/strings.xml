@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">航点飞行</string>
+    <string name="product_information">无人机信息</string>
+    <string name="connection_loose">状态: 无产品连接</string>
+    <string name="lowSpeed">低速</string>
+    <string name="midSpeed">中速</string>
+    <string name="highSpeed">高速</string>
+    <string name="Auto">自动</string>
+    <string name="initial">使用最初航向</string>
+    <string name="RC_Control">遥控器控制</string>
+    <string name="use_waypoint">使用航点航向</string>
+
+</resources>

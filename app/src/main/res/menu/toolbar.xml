@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/login"
+        android:title="登录"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/logout"
+        android:title="退出登录"
+
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/start_test"
+        android:title="航点测试"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/start_file_operator"
+        android:title="打开文件"
+        app:showAsAction="never"/>
+</menu>

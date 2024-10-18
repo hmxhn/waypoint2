@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="发送消息"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="20dp">
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="当前连接设备为："
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_toRightOf="@+id/tv"
+        android:textSize="16sp" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/rl_send"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+
+<!--        android:layout_weight="1"-->
+<!--        android:orientation="vertical"-->
+<!--       >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/sendarea"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="发送区"-->
+<!--            android:textSize="16sp" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/edit_text_send"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="500dp"-->
+<!--            android:layout_below="@+id/sendarea"-->
+<!--            android:background="@drawable/underline"-->
+<!--            android:hint="在此输入"-->
+<!--            android:singleLine="false" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_send"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/edit_text_send"-->
+
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:background="@drawable/btn"-->
+<!--            android:text="发送"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            />-->
+<!--    </LinearLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+
+        android:layout_toRightOf="@+id/rl_send"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:id="@+id/receivearea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="接收区"
+            android:textSize="16sp"
+           />
+
+        <TextView
+            android:id="@+id/tv_receive"
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+
+            android:layout_below="@+id/receivearea"
+            android:background="@drawable/underline"
+            android:scrollbars="vertical" />
+
+        <Button
+            android:id="@+id/btn_receive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_receive"
+
+            android:layout_marginRight="10dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/btn"
+            android:text="接收完毕"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+
+    </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

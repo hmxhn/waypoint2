@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xd.waypoint">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30"/>
+    <!-- Needed only if your app looks for Bluetooth devices.
+     If your app doesn't use Bluetooth scan results to derive physical
+     location information, you can
+     <a href="#assert-never-for-location">strongly assert that your app
+     doesn't derive physical location</a>. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <!-- Needed only if your app communicates with already-paired Bluetooth
+        devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!-- Needed only if your app makes the device discoverable to Bluetooth
+     devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.CHANGE_CONFIGURATION"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-feature
+        android:name="android.hardware.usb.accessory"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="false" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.bluetooth"
+        android:required="true"/>
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:name=".MApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/cover"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/cover"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".BT.BlueToothActivity"
+            android:exported="true"
+            android:theme="@style/Base.Theme.AppCompat.Dialog"/>
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+
+        <activity
+            android:name=".activity.MainActivity1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- DJI SDK -->
+        <uses-library android:name="com.android.future.usb.accessory" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.dji.sdk.API_KEY"
+            android:value="1e1964d3100724ea0e2ee07c" /> <!-- <meta-data -->
+        <!-- android:name="com.amap.api.v2.apikey" -->
+        <!-- android:value="3335869eb99da4001654fc0b9f93762d" /> &lt;!&ndash; 输入申请的API key启用高德地图服务 &ndash;&gt; -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="23ba0ffe5a7b38a846d0664603fb02a1" />
+
+        <service
+            android:name="dji.sdk.sdkmanager.DJIGlobalService"
+            tools:ignore="Instantiatable" /> <!-- DJI SDK -->
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:exported="true"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity
+            android:name=".activity.ConnectionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
+            android:exported="true"
+            android:screenOrientation="fullSensor">
+        <!--    <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+                android:resource="@xml/accessory_filter" />
+        </activity> <!-- 连接遥控器 -->
+        <activity
+            android:name="dji.sdk.sdkmanager.DJIAoaControllerActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name=".activity.WayPointActivity"
+             />
+        <activity
+            android:name=".activity.FlyTestActivity"
+            android:configChanges="orientation"
+            android:parentActivityName=".MainActivity"
+             />
+        <activity
+            android:name=".activity.WaypointMissionActivity"
+            />
+        <activity
+            android:name=".activity.CameraActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".BT.CommunicationActivity"
+            android:theme="@style/Base.Theme.AppCompat.Dialog"/>
+
+        <activity android:name=".activity.FileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SimulatorActivity"
+            />
+    </application>
+
+</manifest>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_bluetooth"
+        android:title="蓝牙"
+        android:id="@+id/bluetooth"
+        app:showAsAction="never"/>
+    <item
+        android:icon="@drawable/ic_import_waypoint"
+        android:id="@+id/import_waypoint"
+        android:title="导入航点"
+        app:showAsAction="never"/>
+</menu>

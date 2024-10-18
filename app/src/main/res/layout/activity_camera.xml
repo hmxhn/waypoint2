@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CameraActivity">
+    <!--TextureView显示来自摄像头的实时视频流-->
+<TextureView
+    android:id="@+id/video_previewer_surface"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
+    android:layout_above="@+id/linearLayout"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true">
+      <Button
+          android:layout_marginLeft="5dp"
+          android:id="@+id/btn_photo"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="wrap_content"
+          android:text="拍摄"
+          android:textSize="12sp"
+          android:background="@drawable/btn"/>
+
+        <ToggleButton
+            android:id="@+id/btn_record"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="开始录制"
+            android:textOff="开始录制"
+            android:textOn="结束录制"
+            android:layout_weight="1"
+            android:textSize="12dp"
+            android:checked="false"
+            android:background="@drawable/btn"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+        <Button
+            android:id="@+id/btn_shoot_photo_mode"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="拍照模式"
+            android:textSize="12sp"
+            android:background="@drawable/btn"/>
+
+        <Button
+            android:id="@+id/btn_record_video_mode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="录像模式"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/btn"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center" />
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/qmui_config_color_background" />
+            <stroke
+                android:width="0.3dp"
+                android:color="@color/qmui_config_color_50_blue" /> <!-- 边框颜色和宽度 -->
+            <corners android:radius="5dp" /> <!-- 圆角半径 -->
+        </shape>
+    </item>
+</selector>

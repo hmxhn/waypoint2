@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/main_title_rl"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:background="@color/qmui_config_color_black" >-->
+
+<!--        -->
+<!--        <ImageButton-->
+<!--            android:id="@+id/ReturnBtn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:onClick="onReturn"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:src="@drawable/selector_back_button" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/ConnectStatusTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:text="模拟器"-->
+<!--            android:textColor="@color/qmui_config_color_white"-->
+<!--            android:textSize="19sp" />-->
+<!--    </RelativeLayout>-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="模拟器"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textview_simulator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="当前模拟器已关"
+        android:textColor="#1B88EE" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_simulator"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_enable_virtual_stick"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/btn"
+            android:text="虚拟摇杆"
+            android:textColor="#111111" />
+
+        <Button
+            android:id="@+id/btn_disable_virtual_stick"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/btn"
+            android:text="关闭虚拟摇杆"
+            android:textColor="#111111" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_take_off"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/btn"
+            android:text="起飞"
+            android:textColor="#111111" />
+
+        <ToggleButton
+            android:id="@+id/btn_start_simulator"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/btn"
+            android:text="开始模拟"
+            android:textColor="#111111"
+            android:textOff="开始模拟"
+            android:textOn="停止模拟" />
+    </LinearLayout>
+
+    <com.xd.waypoint.utils.OnScreenJoystick
+        android:id="@+id/directionJoystickRight"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@mipmap/joystick_bg" />
+
+    <com.xd.waypoint.utils.OnScreenJoystick
+        android:id="@+id/directionJoystickLeft"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/joystick_bg"/>
+
+</RelativeLayout>
